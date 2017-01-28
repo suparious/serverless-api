@@ -1,0 +1,7 @@
+{
+  "name": "serverless-api",
+  "version": "1.0.0",
+  "description": "GET the URL and return a status",
+  "author": "Shaun Prince",
+  "license": "MIT"
+}
