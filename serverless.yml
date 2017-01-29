@@ -7,10 +7,9 @@ provider:
   runtime: nodejs4.3
 
 functions:
-
-  urlcheck:
-    handler: handler.urlcheck
+  urlinfo:
+    handler: handler.urlinfo
     events:
       - http:
+          path: urlinfo/1/{hostinfo}/{queryinfo}
           method: get
-          path: urlcheck
