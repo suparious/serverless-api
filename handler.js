@@ -1,10 +1,10 @@
 'use strict';
 
 module.exports.urlcheck = (event, context, callback) => {
-  let dynamicHtml = '<p>Unlisted URL</p>';
+  let dynamicHtml = '<p>URL not found<br>usage: GET /urlinfo/1/{hostname_and_port}/{original_path_and_query_string}</p>';
   // check for GET params and use if available
-  if (event.queryStringParameters && event.queryStringParameters.name) {
-    dynamicHtml = `<p>Match found on ${event.queryStringParameters.name}!</p>`;
+  if (event.queryStringParameters) {
+    dynamicHtml = `<p>Match found on ${event.queryStringParameters}!</p>`;
   }
 
   const html = `
