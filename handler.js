@@ -5,11 +5,11 @@ module.exports.urlInfo = (event, context, callback) => {
   const queryInfo = event.pathParameters.original_path_and_query_string;
 
   // ToDo: Add some actual validation code here
-  const status = 'FAIL';
-  if (hostInfo == null) {
-    let status = 'isnull';
+  let status = 'FAIL';
+  if (typeof hostInfo === 'undefined' || hostInfo === null) {
+    let status = 'INCOMPLETE';
   } else {
-    let status = 'notnull';
+    let status = 'PASS';
   }
 
   const response  = {
