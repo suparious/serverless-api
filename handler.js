@@ -8,3 +8,12 @@ module.exports.hostInfo = (event, context, callback) => {
   };
   callback(null, response);
 };
+
+module.exports.queryInfo = (event, context, callback) => {
+  const queryInfo = event.pathParameters.original_path_and_query_string
+  const response = {
+    statusCode: 200,
+    body: JSON.stringify({ "message": 'Validating ' + queryInfo + '!'})
+  };
+  callback(null, response);
+};
