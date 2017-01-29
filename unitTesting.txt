@@ -1,2 +1,5 @@
 https://6gu9iw4z8i.execute-api.us-east-1.amazonaws.com/dev/urlinfo/1/domain.com:80/books?page=delete
  - unable to parse raw URL query strings, required URI formatting or escaping the special chars.
+
+https://6gu9iw4z8i.execute-api.us-east-1.amazonaws.com/dev/urlinfo/1/github.com:443/suparious/serverless-api
+ - unable to parse paths in the query string

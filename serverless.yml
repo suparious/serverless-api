@@ -7,14 +7,8 @@ provider:
   runtime: nodejs4.3
 
 functions:
-  hostInfo:
-    handler: handler.hostInfo
-    events:
-      - http:
-          path: urlinfo/1/{hostname_and_port}
-          method: get
-  queryInfo:
-    handler: handler.queryInfo
+  urlInfo:
+    handler: handler.urlInfo
     events:
       - http:
           path: urlinfo/1/{hostname_and_port}/{original_path_and_query_string}
