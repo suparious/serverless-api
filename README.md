@@ -1,5 +1,5 @@
 # serverless-api
-Simple REST API using AWS Lamba
+Simple URL look-up service using AWS API Gateway and Lamda
 
 Objective
 Write a small web service, in the language/framework your choice,
