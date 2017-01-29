@@ -1,4 +1,14 @@
-https://6gu9iw4z8i.execute-api.us-east-1.amazonaws.com/dev/urlinfo/1/domain.com:80/books?page=delete
+https://6gu9iw4z8i.execute-api.us-east-1.amazonaws.com/dev/urlinfo/1/github.com:443/suparious
+ - Basic smoke test
+ - Confirms service availability and successful configuration
+
+https://6gu9iw4z8i.execute-api.us-east-1.amazonaws.com/dev/urlinfo/1/github.com:443/suparious%2Fserverless-api
+https://6gu9iw4z8i.execute-api.us-east-1.amazonaws.com/dev/urlinfo/1/amazon.com:443/books%3Fpage%3Ddelete
+ - Confirms passing URLs (RFC 1738).
+
+
+Known issues:
+https://6gu9iw4z8i.execute-api.us-east-1.amazonaws.com/dev/urlinfo/1/amazon.com:443/books?page=delete
  - unable to parse raw URL query strings, required URI formatting or escaping the special chars.
 
 https://6gu9iw4z8i.execute-api.us-east-1.amazonaws.com/dev/urlinfo/1/github.com:443/suparious/serverless-api
