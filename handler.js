@@ -1,10 +1,12 @@
 'use strict';
 
 module.exports.urlinfo = (event, context, callback) => {
-  let dynamicHtml = '<p>URL not found</p><p>usage: GET /urlinfo/1/{hostname_and_port}/{original_path_and_query_string}</p><p>Diagnostics<br>hostname_and_port: ${event.queryStringParameters.hostinfo}</p>';
+  let hostInfo    = `${event.queryStringParameters.hostinfo}`;
+  let queryInfo   = `${event.queryStringParameters.queryinfo}`;
+  let dynamicHtml = '<p>URL not found</p><p>usage: GET /urlinfo/1/{hostname_and_port}/{original_path_and_query_string}</p>';
   // check for GET params and use if available
   if (event.queryStringParameters && event.queryStringParameters.hostinfo && event.queryStringParameters.queryinfo) {
-    dynamicHtml = `<p>Looking up: ${event.queryStringParameters.hostinfo}!<br>using the following query: ${event.queryStringParameters.queryinfo}</p>`;
+    dynamicHtml = `<p>Looking up request for: ${event.queryStringParameters.hostinfo}!</p>`;
   }
 
   const html = `
@@ -15,8 +17,8 @@ module.exports.urlinfo = (event, context, callback) => {
     <body>
       <h1>URL Security Check</h1>
       ${dynamicHtml}
-      Host information: ${event.queryStringParameters.hostinfo}
-      Path and query: ${event.queryStringParameters.queryinfo}
+      Host information: ${hostInfo}
+      Path and query: ${queryInfo}
     </body>
   </html>`;
 
