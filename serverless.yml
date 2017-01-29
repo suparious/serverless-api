@@ -8,14 +8,8 @@ provider:
 
 functions:
   hostinfo:
-    handler: handler.hostinfo
+    handler: handler.hostInfo
     events:
       - http:
-          path: urlinfo/1/{hostinfo}
-          method: get
-  queryinfo:
-    handler: handler.queryinfo
-    events:
-      - http:
-          path: urlinfo/1/*/{queryinfo}
+          path: urlinfo/1/{hostname_and_port}
           method: get
