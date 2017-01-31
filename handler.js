@@ -1,20 +1,16 @@
 'use strict';
 
 module.exports.urlInfo = (event, context, callback) => {
-  let hostInfo  = event.pathParameters.hostname_and_port;
-  let queryInfo = event.pathParameters.original_path_and_query_string;
+  // Initialize variables
+  let hostInfo  = '';
+  let queryInfo = '';
+  let status = '';
+  let result = '';
 
   // Validate the input
-  if (hostInfo && queryInfo) {
-    status = 'RECIEVED';
-  } else {
-    status = 'INCOMPLETE';
-    hostInfo = 'null';
-    queryInfo = 'null';
-  }
-
-  // process the request
-  if (status == 'RECIEVED') {
+  if (event.pathParameters.hostname_and_port && event.pathParameters.original_path_and_query_string) {
+    hostInfo  = event.pathParameters.hostname_and_port;
+    queryInfo = event.pathParameters.original_path_and_query_string;
     // check against a DunamoDB table
     status = 'Successfully processed your request';
     result = 'PASS';
