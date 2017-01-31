@@ -13,3 +13,6 @@ functions:
       - http:
           path: urlinfo/1/{hostname_and_port}/{original_path_and_query_string}
           method: get
+      - http:
+          path: urlinfo/1
+          method: get
