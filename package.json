@@ -3,5 +3,9 @@
   "version": "1.0.0",
   "description": "GET the URL and return a status",
   "author": "Shaun Prince",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "aws-sdk": "^2.9.0",
+    "uuid": "^3.0.1"
+  }
 }
