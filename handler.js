@@ -1,6 +1,6 @@
 'use strict';
 
-module.exports.urlInfo = (event, context, callback) => {
+module.exports.urlinfo = (event, context, callback) => {
   // Initialize variables
   let hostInfo  = '';
   let queryInfo = '';
@@ -23,10 +23,10 @@ module.exports.urlInfo = (event, context, callback) => {
   const response  = {
     statusCode: 200,
     headers: {
-      "x-custom-header" : "urlInfo - results"
+      "x-custom-header" : "urlinfo - results"
     },
     body: JSON.stringify({
-      values: hostInfo + '/' + queryInfo,
+      values: hostInfo + ', ' + queryInfo,
       status: status,
       result: result
     }, null, '\t')
