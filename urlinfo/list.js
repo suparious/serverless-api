@@ -13,7 +13,7 @@ module.exports.list = (event, context, callback) => {
     // handle potential errors
     if (error) {
       console.error(error); // eslint-disable-line no-console
-      callback(new Error('Couldn\'t fetch the urlinfos.'));
+      callback(new Error('Couldn\'t fetch the urlinfo.'));
       return;
     }
 

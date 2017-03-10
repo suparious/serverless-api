@@ -6,7 +6,7 @@ provider:
   name: aws
   runtime: nodejs4.3
   environment:
-    DYNAMODB_TABLE: ${self:service}
+    DYNAMODB_TABLE: ${self:service}-${opt:stage, self:provider.stage}
   iamRoleStatements:
     - Effect: Allow
       Action:
@@ -16,7 +16,7 @@ provider:
         - dynamodb:PutItem
         - dynamodb:UpdateItem
         - dynamodb:DeleteItem
-      Resource: "arn:aws:dynamodb:${self:provider.region}:*:table/${self:service}"
+      Resource: "arn:aws:dynamodb:${self:provider.region}:*:table/${self:service}-${opt:stage, self:provider.stage}"
 
 
 functions:
@@ -73,7 +73,7 @@ functions:
 
 resources:
   Resources:
-    urlinfoDynamoDbTable:
+    UrlinfosDynamoDbTable:
       Type: 'AWS::DynamoDB::Table'
       DeletionPolicy: Retain
       Properties:
